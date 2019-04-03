@@ -8,5 +8,6 @@ namespace HuilyFx
 {
     public class Class1
     {
+
     }
 }
