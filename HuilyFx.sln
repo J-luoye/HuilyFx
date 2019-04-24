@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuilyFx", "HuilyFx\HuilyFx.csproj", "{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{E5C9A659-86F1-4436-A56A-F2F81A66024A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredicateLib", "PredicateLib\PredicateLib.csproj", "{375CC622-4A3B-4429-98F0-C8221942BE43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375CC622-4A3B-4429-98F0-C8221942BE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375CC622-4A3B-4429-98F0-C8221942BE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375CC622-4A3B-4429-98F0-C8221942BE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375CC622-4A3B-4429-98F0-C8221942BE43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{375CC622-4A3B-4429-98F0-C8221942BE43} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0E3CF02-C6E3-4D54-A9E8-12E34E14AD52}
