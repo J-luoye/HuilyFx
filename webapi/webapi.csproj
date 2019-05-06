@@ -241,6 +241,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4f58b0ea-0f6d-4ec3-8e80-89f36d08ec81}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JWT\JwtDotnet.csproj">
       <Project>{9892a389-b58d-4011-9476-1087706b16f0}</Project>
       <Name>JwtDotnet</Name>

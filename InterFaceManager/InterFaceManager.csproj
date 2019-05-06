@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IConvert.cs" />
     <Compile Include="IPageInfo.cs" />
     <Compile Include="IStringId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
