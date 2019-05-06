@@ -9,6 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{E5C9A659-86F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredicateLib", "PredicateLib\PredicateLib.csproj", "{375CC622-4A3B-4429-98F0-C8221942BE43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLib", "DataLib\DataLib.csproj", "{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pub", "Pub", "{1A80D675-A3AA-4554-8608-DF36EDA28D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterFaceManager", "InterFaceManager\InterFaceManager.csproj", "{0F5CD174-BCBB-4BAC-926A-675B463132A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtDotnet", "JWT\JwtDotnet.csproj", "{9892A389-B58D-4011-9476-1087706B16F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi", "webapi\webapi.csproj", "{5B661B8C-F156-4FC6-A846-857984F98AF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目文档解析", "项目文档解析", "{69238FF9-59B7-42E8-A9E4-9C0FFF7B0FDB}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\恭喜发财\Desktop\webapi.txt = C:\Users\恭喜发财\Desktop\webapi.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +40,36 @@ Global
 		{375CC622-4A3B-4429-98F0-C8221942BE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{375CC622-4A3B-4429-98F0-C8221942BE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{375CC622-4A3B-4429-98F0-C8221942BE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5CD174-BCBB-4BAC-926A-675B463132A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5CD174-BCBB-4BAC-926A-675B463132A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5CD174-BCBB-4BAC-926A-675B463132A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5CD174-BCBB-4BAC-926A-675B463132A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9892A389-B58D-4011-9476-1087706B16F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9892A389-B58D-4011-9476-1087706B16F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9892A389-B58D-4011-9476-1087706B16F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9892A389-B58D-4011-9476-1087706B16F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{375CC622-4A3B-4429-98F0-C8221942BE43} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
+		{F2DBABE8-5FAD-4F5A-ADA7-F61204529933} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
+		{0F5CD174-BCBB-4BAC-926A-675B463132A2} = {1A80D675-A3AA-4554-8608-DF36EDA28D64}
+		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
+		{9892A389-B58D-4011-9476-1087706B16F0} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0E3CF02-C6E3-4D54-A9E8-12E34E14AD52}

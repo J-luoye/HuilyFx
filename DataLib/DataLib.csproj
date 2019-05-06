@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}</ProjectGuid>
+    <ProjectGuid>{F2DBABE8-5FAD-4F5A-ADA7-F61204529933}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HuilyFx</RootNamespace>
-    <AssemblyName>HuilyFx</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>DataLib</RootNamespace>
+    <AssemblyName>DataLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -31,13 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\..\..\work\TC\trunk\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,26 +51,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="SqlClient.cs" />
+    <Compile Include="SqlServer\PageInfoEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServer\SqlDb.cs" />
+    <Compile Include="SqlServer\SqlQueryExtend.cs" />
+    <Compile Include="SqlServer\SqlServerBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mogodb\" />
+    <Folder Include="MySql\" />
+    <Folder Include="SQLite\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{4f58b0ea-0f6d-4ec3-8e80-89f36d08ec81}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataLib\DataLib.csproj">
-      <Project>{f2dbabe8-5fad-4f5a-ada7-f61204529933}</Project>
-      <Name>DataLib</Name>
+    <ProjectReference Include="..\InterFaceManager\InterFaceManager.csproj">
+      <Project>{0f5cd174-bcbb-4bac-926a-675b463132a2}</Project>
+      <Name>InterFaceManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PredicateLib\PredicateLib.csproj">
-      <Project>{375cc622-4a3b-4429-98f0-c8221942be43}</Project>
-      <Name>PredicateLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
