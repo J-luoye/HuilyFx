@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,14 +32,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.7.5.0\lib\net40-client\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\work\GitHub\七牛云存储\SDK\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PredicateLib, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PredicateLib.0.0.5\lib\net40\PredicateLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,12 +91,31 @@
     <Compile Include="Page\PageInfo.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AbsoluteCache.cs" />
+    <Compile Include="Utility\AsyncRoot.cs" />
+    <Compile Include="Utility\Cells.cs" />
+    <Compile Include="Utility\ConsistentHash.cs" />
+    <Compile Include="Utility\Debugger.cs" />
+    <Compile Include="Utility\EMail.cs" />
+    <Compile Include="Utility\Encryption.cs" />
+    <Compile Include="Utility\HttpHelper.cs" />
+    <Compile Include="Utility\JsonSerializer.cs" />
+    <Compile Include="Utility\LogHelper.cs" />
+    <Compile Include="Utility\Mapper.cs" />
+    <Compile Include="Utility\MemoryCaches.cs" />
+    <Compile Include="Utility\Polygon.cs" />
+    <Compile Include="Utility\Searcher.cs" />
+    <Compile Include="Utility\Updater.cs" />
+    <Compile Include="Utility\ValidCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InterFaceManager\InterFaceManager.csproj">
       <Project>{0f5cd174-bcbb-4bac-926a-675b463132a2}</Project>
       <Name>InterFaceManager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

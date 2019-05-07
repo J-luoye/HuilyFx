@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目文档解析", "项�
 		C:\Users\恭喜发财\Desktop\webapi.txt = C:\Users\恭喜发财\Desktop\webapi.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis", "Redis\Redis.csproj", "{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B661B8C-F156-4FC6-A846-857984F98AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{0F5CD174-BCBB-4BAC-926A-675B463132A2} = {1A80D675-A3AA-4554-8608-DF36EDA28D64}
 		{4F58B0EA-0F6D-4EC3-8E80-89F36D08EC81} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
 		{9892A389-B58D-4011-9476-1087706B16F0} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
+		{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC} = {E5C9A659-86F1-4436-A56A-F2F81A66024A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0E3CF02-C6E3-4D54-A9E8-12E34E14AD52}
