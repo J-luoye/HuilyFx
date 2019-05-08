@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using webapi.Enum;
 using webapi.Models;
 
@@ -7,7 +8,7 @@ namespace webapi.Controllers
     /// <summary>
     /// 业务接口
     /// </summary>
-    [RoutePrefix("Values")]
+    [RoutePrefix("api/[Controller]")]
     public class ValuesController : ApiBaseController
     {
         /// <summary>
@@ -19,14 +20,14 @@ namespace webapi.Controllers
         public ResultModel GetUserInfo()
         {
             AuthInfo info = this.Model;
-            if (info == null)
-            {
-                return new ResultModel{ code = ResultCode.Error, Message = "失败"};
-            }
-            else
-            {
-                return new ResultModel { code = ResultCode.Success, Message = "成功", Data = info};
-            }
+            var Code = info == null ? ResultCode.Error : ResultCode.Success;
+            return ResultModel.Custom(Code, info, Code.GetFieldDisplay());
         }
+
+        public ResultModel GetRoles()
+        {
+            return ResultModel.Success();
+        }
+
     }
 }

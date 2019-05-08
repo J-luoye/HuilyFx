@@ -14,5 +14,10 @@ namespace webapi.Controllers
         /// 用户信息
         /// </summary>
         public AuthInfo Model { get; set; }
+
+        /// <summary>
+        /// 用户登录token
+        /// </summary>
+        public string Token { get; set; }
     }
 }

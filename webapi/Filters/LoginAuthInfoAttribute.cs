@@ -40,6 +40,7 @@ namespace webapi.Models
             if (controller != null)
             {
                 controller.Model = model;
+                controller.Token = token;
             }
         }
 
@@ -50,7 +51,7 @@ namespace webapi.Models
         /// <param name="code"></param>
         private void SetTokenInvalidResponse(HttpActionContext actionContext, ResultCode code)
         {
-            actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.OK,new ResultModel(){ code  = code, Message = code.GetFieldDisplay() });
+            actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.OK, new ResultModel() { code = code, Message = code.GetFieldDisplay() });
         }
     }
 }

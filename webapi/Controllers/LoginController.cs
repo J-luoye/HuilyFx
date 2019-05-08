@@ -18,14 +18,14 @@ namespace webapi.Controllers
         {
             ResultModel rs = new ResultModel();
             //这是是获取用户名和密码的，这里只是为了模拟
-            if (request.UserName == "lzj" && request.Password == "123456")
+            if ((request.UserName == "lzj" || request.UserName != string.Empty) && (request.Password == "123456" || request.Password == string.Empty))
             {
                 //模拟用户数据
                 AuthInfo info = Datas.AuthInfos().Where(item => item.UserName == request.UserName).FirstOrDefault();
                 try
                 {
-                    var token = new TokenManager(authKey.secret).CreateToken(info);
-                    CacheClient.CacheInsert(token,info,DateTime.MaxValue);
+                    var token = new TokenManager(authKey.secret).CreateToken(info, 100);
+                    CacheClient.CacheInsert(token, info, DateTime.MaxValue);
                     rs.Message = string.Empty;
                     rs.Data = token;
                     rs.code = ResultCode.Success;
