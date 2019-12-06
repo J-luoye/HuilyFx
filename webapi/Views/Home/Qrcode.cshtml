@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+    var img = ViewBag.QrImage;
+}
+
+
+<ul>
+    <li>原始数据：@ViewBag.one</li>
+    <li>二维码数据：@ViewBag.two</li>
+    <li>二维码解析数据：@ViewBag.three</li>
+</ul>
+
+<img src="@img" width="30%" style="text-align: center;margin:0;padding: 100px"/>

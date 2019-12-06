@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Principal;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using webapi.Cache;
@@ -39,8 +40,9 @@ namespace webapi.Models
             var controller = actionContext.ControllerContext.Controller as ApiBaseController;
             if (controller != null)
             {
-                controller.Model = model;
+                controller.UserInfo = model;
                 controller.Token = token;
+                controller.User = 
             }
         }
 

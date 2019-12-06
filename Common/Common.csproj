@@ -53,6 +53,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -105,6 +106,7 @@
     <Compile Include="Utility\MemoryCaches.cs" />
     <Compile Include="Utility\Polygon.cs" />
     <Compile Include="Utility\Searcher.cs" />
+    <Compile Include="Utility\SystemInfo.cs" />
     <Compile Include="Utility\Updater.cs" />
     <Compile Include="Utility\ValidCode.cs" />
   </ItemGroup>

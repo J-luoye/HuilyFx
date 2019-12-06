@@ -8,9 +8,9 @@ namespace webapi.Controllers
     /// <summary>
     /// 业务接口
     /// </summary>
-    [RoutePrefix("api/[Controller]")]
+    [RoutePrefix("api/values")]
     public class ValuesController : ApiBaseController
-    {
+    { 
         /// <summary>
         /// 获取登录用户信息
         /// </summary>
@@ -19,7 +19,7 @@ namespace webapi.Controllers
         [Route("GetUserInfo")]
         public ResultModel GetUserInfo()
         {
-            AuthInfo info = this.Model;
+            AuthInfo info = this.UserInfo;
             var Code = info == null ? ResultCode.Error : ResultCode.Success;
             return ResultModel.Custom(Code, info, Code.GetFieldDisplay());
         }

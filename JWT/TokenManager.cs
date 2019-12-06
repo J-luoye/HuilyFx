@@ -52,13 +52,14 @@ namespace JwtDotnet
             var now = provider.GetNow();
 
             var unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc); // or use JwtValidator.UnixEpoch
-            var secondsSinceEpoch = Math.Round((now - unixEpoch).TotalSeconds);
+            var secondsSinceEpoch = Math.Round((now - unixEpoch).TotalSeconds) + month;
 
-            var payload = new Dictionary<string, object>
+            var payload = new
             {
-                { "name", "jwt"},
-                {"exp",secondsSinceEpoch+month },
-                {"jti",data }
+                key = "AP190612",
+                exp = secondsSinceEpoch,
+                data =data,
+                scope = "ADMIN.HOUSE"
             };
 
 
