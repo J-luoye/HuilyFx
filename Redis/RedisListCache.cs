@@ -1,5 +1,6 @@
 ﻿using StackExchange.Redis;
 using System.Threading.Tasks;
+using Common.Utility;
 
 namespace Redis
 {
@@ -80,6 +81,7 @@ namespace Redis
             {
                 return default(T);
             }
+
             return JsonSerializer.TryDeserialize<T>(value);
         }
 
@@ -94,6 +96,7 @@ namespace Redis
             var db = this.GetDatabase();
             var redisValue = JsonSerializer.Serialize(value);
             await db.ListRightPushAsync(key, redisValue);
+           
             return true;
         }
 

@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
-using System.IO;
-using System.Text;
 using System.Management;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Common.Utility
 {
+    /// <summary>
+    /// 系统信息
+    /// </summary>
     public class SystemInfo
     {
         private int m_ProcessorCount = 0;   //CPU个数 
