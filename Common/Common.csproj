@@ -118,7 +118,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Tools\Redis\Redis.rar" />
+    <None Include="Tools\MongoDb\MongoDB.rar" />
     <None Include="packages.config" />
+    <None Include="Tools\Sevr-U\Serv-U.rar" />
+    <None Include="Tools\Sqlite\bizBd.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tools\MongoDb\random.txt" />
+    <Content Include="Tools\Redis\random.txt" />
+    <Content Include="Tools\Sevr-U\random.txt" />
+    <Content Include="Tools\Sqlite\random.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuilyFx", "HuilyFx\HuilyFx.csproj", "{FCE4C3DC-AB69-4E47-8C18-F57236BB3AC6}"
 EndProject
@@ -26,13 +26,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目文档解析", "项�
 		C:\Users\恭喜发财\Desktop\webapi.txt = C:\Users\恭喜发财\Desktop\webapi.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis", "Redis\Redis.csproj", "{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redis", "Redis\Redis.csproj", "{6CACFE4F-0678-43D8-B8BE-BE9532CF40DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{7B270FED-EB38-4326-B5F4-B9FA2A3776B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "Identity\Identity.csproj", "{DDEE9EC3-B5C3-4423-AC26-C67422554BEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAuthen", "ApiAuthen\ApiAuthen.csproj", "{1D9E4C65-4235-4E87-9121-D9BC2376CCA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiAuthen", "ApiAuthen\ApiAuthen.csproj", "{1D9E4C65-4235-4E87-9121-D9BC2376CCA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
