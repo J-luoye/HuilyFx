@@ -30,7 +30,6 @@ namespace JwtDotnet
             IJsonSerializer serializer = new JsonNetSerializer();
             IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
             IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
-
             var token = encoder.Encode(payload, secret);
             return token;
         }

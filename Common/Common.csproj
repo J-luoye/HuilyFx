@@ -76,6 +76,7 @@
     <Compile Include="Converts\NullableConvert.cs" />
     <Compile Include="Converts\NullConvert.cs" />
     <Compile Include="Converts\SimpleContert.cs" />
+    <Compile Include="Execption\CustomizeExecption.cs" />
     <Compile Include="Extends\System.Linq.Expressions\Operator.cs" />
     <Compile Include="Extends\System.Linq.Expressions\Where.cs" />
     <Compile Include="Extends\System.Linq\IQueryableExtend.cs" />
