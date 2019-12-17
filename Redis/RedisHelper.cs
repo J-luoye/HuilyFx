@@ -132,7 +132,7 @@ namespace Redis
         public bool StringSet<T>(string redisKey, T redisValue, TimeSpan? expiry = null)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(redisValue);
+            var json = SerializeObject(redisValue);
             return _db.StringSet(redisKey, json, expiry);
         }
 
@@ -145,7 +145,7 @@ namespace Redis
         public T StringGet<T>(string redisKey, TimeSpan? expiry = null)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(_db.StringGet(redisKey));
+            return DeserializeObject<T>(_db.StringGet(redisKey));
         }
 
         #region async
@@ -198,7 +198,7 @@ namespace Redis
         public async Task<bool> StringSetAsync<T>(string redisKey, T redisValue, TimeSpan? expiry = null)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(redisValue);
+            var json = SerializeObject(redisValue);
             return await _db.StringSetAsync(redisKey, json, expiry);
         }
 
@@ -211,7 +211,7 @@ namespace Redis
         public async Task<T> StringGetAsync<T>(string redisKey, TimeSpan? expiry = null)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(await _db.StringGetAsync(redisKey));
+            return DeserializeObject<T>(await _db.StringGetAsync(redisKey));
         }
 
         #endregion async
@@ -337,7 +337,7 @@ namespace Redis
         public bool HashSet<T>(string redisKey, string hashField, T value)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(value);
+            var json = SerializeObject(value);
             return _db.HashSet(redisKey, hashField, json);
         }
 
@@ -350,7 +350,7 @@ namespace Redis
         public T HashGet<T>(string redisKey, string hashField)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(_db.HashGet(redisKey, hashField));
+            return DeserializeObject<T>(_db.HashGet(redisKey, hashField));
         }
 
         #region async
@@ -472,7 +472,7 @@ namespace Redis
         public async Task<bool> HashSetAsync<T>(string redisKey, string hashField, T value)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(value);
+            var json = SerializeObject(value);
             return await _db.HashSetAsync(redisKey, hashField, json);
         }
 
@@ -485,7 +485,7 @@ namespace Redis
         public async Task<T> HashGetAsync<T>(string redisKey, string hashField)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(await _db.HashGetAsync(redisKey, hashField));
+            return DeserializeObject<T>(await _db.HashGetAsync(redisKey, hashField));
         }
 
         #endregion async
@@ -582,7 +582,7 @@ namespace Redis
         public T ListLeftPop<T>(string redisKey)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(_db.ListLeftPop(redisKey));
+            return DeserializeObject<T>(_db.ListLeftPop(redisKey));
         }
 
         /// <summary>
@@ -593,7 +593,7 @@ namespace Redis
         public T ListRightPop<T>(string redisKey)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(_db.ListRightPop(redisKey));
+            return DeserializeObject<T>(_db.ListRightPop(redisKey));
         }
 
         /// <summary>
@@ -605,7 +605,7 @@ namespace Redis
         public long ListRightPush<T>(string redisKey, T redisValue)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return _db.ListRightPush(redisKey, Serialize(redisValue));
+            return _db.ListRightPush(redisKey, SerializeObject(redisValue));
         }
 
         /// <summary>
@@ -617,7 +617,7 @@ namespace Redis
         public long ListLeftPush<T>(string redisKey, T redisValue)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return _db.ListLeftPush(redisKey, Serialize(redisValue));
+            return _db.ListLeftPush(redisKey, SerializeObject(redisValue));
         }
 
         #region List-async
@@ -710,7 +710,7 @@ namespace Redis
         public async Task<T> ListLeftPopAsync<T>(string redisKey)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(await _db.ListLeftPopAsync(redisKey));
+            return DeserializeObject<T>(await _db.ListLeftPopAsync(redisKey));
         }
 
         /// <summary>
@@ -721,7 +721,7 @@ namespace Redis
         public async Task<T> ListRightPopAsync<T>(string redisKey)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return Deserialize<T>(await _db.ListRightPopAsync(redisKey));
+            return DeserializeObject<T>(await _db.ListRightPopAsync(redisKey));
         }
 
         /// <summary>
@@ -733,7 +733,7 @@ namespace Redis
         public async Task<long> ListRightPushAsync<T>(string redisKey, T redisValue)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return await _db.ListRightPushAsync(redisKey, Serialize(redisValue));
+            return await _db.ListRightPushAsync(redisKey, SerializeObject(redisValue));
         }
 
         /// <summary>
@@ -745,7 +745,7 @@ namespace Redis
         public async Task<long> ListLeftPushAsync<T>(string redisKey, T redisValue)
         {
             redisKey = AddKeyPrefix(redisKey);
-            return await _db.ListLeftPushAsync(redisKey, Serialize(redisValue));
+            return await _db.ListLeftPushAsync(redisKey, SerializeObject(redisValue));
         }
 
         #endregion List-async
@@ -811,7 +811,7 @@ namespace Redis
         public bool SortedSetAdd<T>(string redisKey, T member, double score)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(member);
+            var json = SerializeObject(member);
 
             return _db.SortedSetAdd(redisKey, json, score);
         }
@@ -875,7 +875,7 @@ namespace Redis
         public async Task<bool> SortedSetAddAsync<T>(string redisKey, T member, double score)
         {
             redisKey = AddKeyPrefix(redisKey);
-            var json = Serialize(member);
+            var json = SerializeObject(member);
 
             return await _db.SortedSetAddAsync(redisKey, json, score);
         }
@@ -1041,7 +1041,7 @@ namespace Redis
         public long Publish<T>(RedisChannel channel, T message)
         {
             var sub = _connMultiplexer.GetSubscriber();
-            return sub.Publish(channel, Serialize(message));
+            return sub.Publish(channel, SerializeObject(message));
         }
 
         #region 发布订阅-async
@@ -1079,7 +1079,7 @@ namespace Redis
         public async Task<long> PublishAsync<T>(RedisChannel channel, T message)
         {
             var sub = _connMultiplexer.GetSubscriber();
-            return await sub.PublishAsync(channel, Serialize(message));
+            return await sub.PublishAsync(channel, SerializeObject(message));
         }
 
         #endregion 发布订阅-async
@@ -1089,12 +1089,15 @@ namespace Redis
         #region private method
 
         /// <summary>
-        /// 添加 Key 的前缀
+        /// 添加 Key 的前缀，defaultKey为空或者null，则直接返回key
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
         private string AddKeyPrefix(string key)
         {
+            if (string.IsNullOrEmpty(_DefaultKey))
+                return key;
+
             return $"{_DefaultKey}:{key}";
         }
 
@@ -1107,7 +1110,6 @@ namespace Redis
         {
             if (obj == null)
                 return null;
-
             var binaryFormatter = new BinaryFormatter();
             using (var memoryStream = new MemoryStream())
             {
@@ -1115,6 +1117,19 @@ namespace Redis
                 var data = memoryStream.ToArray();
                 return data;
             }
+        }
+
+        /// <summary>
+        /// Newtonsoft Json 序列化
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        private static string SerializeObject(object obj)
+        {
+            if (obj == null)
+                return null;
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
         }
 
         /// <summary>
@@ -1134,6 +1149,20 @@ namespace Redis
                 var result = (T)binaryFormatter.Deserialize(memoryStream);
                 return result;
             }
+        }
+
+        /// <summary>
+        /// Newtonsoft Json 反序列化
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="jsonData"></param>
+        /// <returns></returns>
+        private static T DeserializeObject<T>(string jsonData)
+        {
+            if (jsonData == null)
+                return default(T);
+            
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonData);
         }
 
         #endregion private method
