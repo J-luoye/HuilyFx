@@ -35,35 +35,26 @@ namespace JwtDotnet
         }
 
         /// <summary>
-        /// 创建token
+        /// 创建token,注意要解析token是一个匿名方式的对象，格式new T{ exp, data }
         /// </summary>
         /// <param name="payload">自定义数据</param>
-        /// <param name="secret">密匙</param>
+        /// <param name="month">过期时间,单位min</param>
         /// <returns></returns>
-        public string CreateToken(object data,int month = 100)
+        public string CreateToken(object data, int min = 60)
         {
-            IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
-            IJsonSerializer serializer = new JsonNetSerializer();
-            IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
-            IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
-            
             IDateTimeProvider provider = new UtcDateTimeProvider();
             var now = provider.GetNow();
 
-            var unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc); // or use JwtValidator.UnixEpoch
-            var secondsSinceEpoch = Math.Round((now - unixEpoch).TotalSeconds) + month;
+            var unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            var secondsSinceEpoch = Math.Round((now - unixEpoch).TotalSeconds) + min;
 
             var payload = new
             {
-                key = "AP190612",
                 exp = secondsSinceEpoch,
-                data =data,
-                scope = "ADMIN.HOUSE"
+                data = data
             };
-
-
-            var token = encoder.Encode(payload, secret);
-            return token;
+            
+            return CreateToken(payload);
         }
 
         /// <summary>
@@ -81,20 +72,18 @@ namespace JwtDotnet
                 IJwtValidator validator = new JwtValidator(serializer, provider);
                 IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
                 IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder);
-
                 var json = decoder.DecodeToObject<T>(token, secret, verify: true);
                 
                 return json;
             }
-            catch (TokenExpiredException tokenEx)
+            catch (TokenExpiredException)
             {
-                throw new TokenExpiredException("Token has expired"); 
+                throw new TokenExpiredException("Token已过期"); 
             }
-            catch (SignatureVerificationException svEx)
+            catch (SignatureVerificationException)
             {
-                throw  new SignatureVerificationException("Token has invalid signature");
+                throw  new SignatureVerificationException("Token签名无效");
             }
         }
-
     }
 }

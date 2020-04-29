@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace test
 {
@@ -15,7 +9,6 @@ namespace test
             var keySecret = new ApiAuthen.KeySecret.KeyAndSecret();
 
             Console.WriteLine(keySecret.aa());
-            
 
             var t = (long)1557456300 * 10000000;
 
@@ -25,7 +18,6 @@ namespace test
 
             Console.ReadLine();
 
-            
 
 
         }

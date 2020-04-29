@@ -50,13 +50,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{4f58b0ea-0f6d-4ec3-8e80-89f36d08ec81}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataLib\DataLib.csproj">
       <Project>{f2dbabe8-5fad-4f5a-ada7-f61204529933}</Project>
       <Name>DataLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HuilyFx.St.Common\HuilyFx.St.Common.csproj">
+      <Project>{55fa8073-8ca5-4353-9db9-fe4005906534}</Project>
+      <Name>HuilyFx.St.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\PredicateLib\PredicateLib.csproj">
       <Project>{375cc622-4a3b-4429-98f0-c8221942be43}</Project>

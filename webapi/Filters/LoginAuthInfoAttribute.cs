@@ -42,7 +42,6 @@ namespace webapi.Models
             {
                 controller.UserInfo = model;
                 controller.Token = token;
-                controller.User = 
             }
         }
 

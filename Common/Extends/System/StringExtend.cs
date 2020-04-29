@@ -321,5 +321,32 @@ namespace System
         }
 
 
+        /// <summary>
+        /// 转义Base64 字符
+        /// </summary>
+        /// <param name="base64"></param>
+        /// <returns></returns>
+        public static string FixUnBase64(this string base64)
+        {
+            return base64.Replace("+", "-").Replace("/", "_");
+        }
+
+        /// <summary>
+        /// 修复 Base64 字符
+        /// </summary>
+        /// <param name="base64"></param>
+        /// <returns></returns>
+        public static string FixBase64(this string base64)
+        {
+            var str = base64.Replace("-", "+").Replace("_", "/");
+            var padLength = 4 - str.Length % 4;
+            if (padLength == 4)
+            {
+                return str;
+            }
+            var pad = new string('=', padLength);
+            return str + pad;
+        }
+
     }
 }

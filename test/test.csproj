@@ -63,6 +63,10 @@
       <Project>{4f58b0ea-0f6d-4ec3-8e80-89f36d08ec81}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lib\RabbitMqttLib\RabbitMqttLib.csproj">
+      <Project>{d640e4c7-c16b-459f-a6e7-e7a0150e70d7}</Project>
+      <Name>RabbitMqttLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
