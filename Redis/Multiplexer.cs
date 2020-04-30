@@ -21,7 +21,7 @@ namespace Redis
 
 
         /// <summary>
-        /// 获取连接名称
+        /// 连接字符串
         /// </summary>
         public string Name { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Redis
         /// <summary>
         /// Redis连接对象
         /// </summary>
-        /// <param name="name">连接名称</param>
+        /// <param name="name">连接字符串</param>
         public Multiplexer(string name)
         {
             this.Name = name;
@@ -75,8 +75,9 @@ namespace Redis
         /// <returns></returns>
         private static ConnectionMultiplexer CreateConnection(string name)
         {
-            var config = ConfigurationManager.ConnectionStrings[name].ConnectionString;
-            var opt = ConfigurationOptions.Parse(config);
+            //var config = ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            //var opt = ConfigurationOptions.Parse(config);
+            var opt = ConfigurationOptions.Parse(name);
             return ConnectionMultiplexer.Connect(opt);
         }
     }
