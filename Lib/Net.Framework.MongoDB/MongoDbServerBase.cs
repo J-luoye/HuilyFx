@@ -31,16 +31,19 @@ namespace Net.Framework.MongoDB
 
 
         /// <summary>
-        /// 获取动态数据库名
+        /// 获取动态数据库名，可自定义数据库名称
         /// </summary>
         protected string DbName
         {
             get
             {
-                return "RKELog" + this.month.ToString("yyMM");
+                return DbName + this.month.ToString("yyMM");
+            }
+            set
+            {
+                DbName = value;
             }
         }
-
 
         /// <summary>
         /// 日志服务基础类
@@ -186,7 +189,7 @@ namespace Net.Framework.MongoDB
         public virtual PageInfo<T> GetPage(Expression<Func<T, bool>> where, int pageIndex, int pageSize)
         {
             var index = this.OnEnsureIndex(new IndexKeysDefinitionBuilder<T>());
-            this.GetCollection().Indexes.CreateOne(index);
+            GetCollection().Indexes.CreateOne(new CreateIndexModel<T>(index));
             try
             {
                 return this.GetCollection().ToPage(where, pageIndex, pageSize);
