@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLib
+namespace Common.Options
 {
-    public class SqlClient
+    public class SqlDbContext
     {
 
     }

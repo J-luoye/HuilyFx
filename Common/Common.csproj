@@ -90,6 +90,7 @@
     <Compile Include="Extends\System\UriExtend.cs" />
     <Compile Include="IConvert.cs" />
     <Compile Include="Method.cs" />
+    <Compile Include="Options\SqlDbContext.cs" />
     <Compile Include="Page\PageInfo.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
