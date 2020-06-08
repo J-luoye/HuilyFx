@@ -1,27 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Core.Web.Services;
+using DataLib;
+using DataLib.Domain;
+using DataLib.SqlServer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Web.Controllers
 {
     public class IndexController : Controller
     {
         private readonly IHubContext<ChatHouService> _hubContext;
+        private readonly SqlServerDbContext _dbContext;
 
-        public IndexController(IHubContext<ChatHouService> hubContext)
+        //private readonly IRepository<faceTab> _repository;
+
+        public IndexController(IHubContext<ChatHouService> hubContext,
+            SqlServerDbContext dbContext
+            //IRepository<faceTab> repository
+            )
         {
             this._hubContext = hubContext;
+            this._dbContext = dbContext;
+            //this._repository = repository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            //var data = await sqlDb.FaceTab.ToListAsync();
+            //var data = await _repository.Query().Include(X => X.FaceUser).ToListAsync();
+            var data = await _dbContext.faceUser.Include(x=>x.faceTab).ToListAsync();
+
             return View();
         }
 
@@ -30,6 +45,10 @@ namespace Core.Web.Controllers
         {
             var userId = Request.Form["userid"];
             var message = Request.Form["message"];
+
+            //var db = new SqlDb();
+            //var data = await db.User.AsQueryable().Include(x => x.UserType).ToListAsync();
+            //db
 
             if (!string.IsNullOrWhiteSpace(userId))
                 await _hubContext.Clients.User(userId).SendAsync("ReceiveMessage", new { message = message });
